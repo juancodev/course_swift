@@ -239,3 +239,17 @@ func getTrimester(trimester:Int) {
     default: print("Invalid number of trimester")
     }
 }
+
+getTrimester(trimester: 10)
+
+// RANGE IN SWITCH
+
+func getSemester(month:Int){
+    switch month {
+    case 1...6: print("First Semester")
+    case 7...12: print("Second Semester")
+    default: print("Invalid number of Semester")
+    }
+}
+
+getSemester(month: 2)
