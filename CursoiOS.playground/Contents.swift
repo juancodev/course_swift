@@ -180,3 +180,62 @@ func calculate(a:Int, b:Int) -> Int {
 
 let functionResult = calculate(a: 20, b: 20)
 print("This is a function with params of out: \(functionResult)")
+
+// IF - ELSE
+
+var userAge = 18
+
+if userAge >= 18 {
+    print("You are an adult")
+} else {
+    print("You are an kid")
+}
+
+// If, else if and else in functions
+
+func greeting2(hour:Int){
+    if hour < 12 {
+        print("Good Morning!")
+    } else if hour < 18 {
+        print("Good Afternoon!")
+    } else {
+        print("Good Night!")
+    }
+}
+
+greeting2(hour: 20)
+
+
+// SWITCH CASE
+
+func getMonthWithSwitch(_ month:Int){
+    switch month {
+    case 1: print("January")
+    case 2: print("Febrary")
+    case 3: print("March")
+    case 4: print("April")
+    case 5: print("May")
+    case 6: print("June")
+    case 7: print("July")
+    case 8: print("August")
+    case 9: print("September")
+    case 10: print("October")
+    case 11: print("November")
+    case 12: print("December")
+    default: print("Ingresa el número del mes válido")
+    }
+}
+
+getMonthWithSwitch(10)
+
+// SWITCH CASE SHORT
+
+func getTrimester(trimester:Int) {
+    switch trimester {
+    case 1, 2, 3: print("First Trimester")
+    case 4, 5, 6: print("Second Trimester")
+    case 7, 8, 9: print("Thirth Trimester")
+    case 10, 11, 12: print("Forth Trimester")
+    default: print("Invalid number of trimester")
+    }
+}
