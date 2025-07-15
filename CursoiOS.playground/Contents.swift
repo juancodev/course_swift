@@ -253,3 +253,52 @@ func getSemester(month:Int){
 }
 
 getSemester(month: 2)
+
+/** Ejercicio 4
+ Calcula el área de un círculo:
+ Crea una función que reciba el radio de un círculo y devuelva su área (PI * Radio * Radio).
+ Luego pinta el resultado por pantalla. */
+
+func calculateRadius(_ radius:Int) -> Double{
+    // Con el Double.pi tengo la forma de obtener el valor de PI
+    let PI:Double = Double.pi
+    let result:Double = PI * Double(radius) * Double(radius)
+    return result
+}
+
+let getResult = calculateRadius(25)
+print("El resultado del calculo del radio es \(getResult)")
+
+/** Ejercicio 5
+ Crea una función que reciba un número y con la ayuda de un IF pinte en pantalla si el número
+ es positivo, negativo o cero */
+
+func getNumber(num:Double){
+    if num == 0 {
+        print("El número pasado es cero.")
+    } else if num > 0 {
+        print("El número \(Int(num)) es positivo.")
+    } else {
+        print("El número \(Int(num)) es negativo.")
+    }
+}
+
+getNumber(num: -25)
+getNumber(num: 15)
+getNumber(num: 0)
+
+/** Ejercicio 6
+ Crea una función que reciba un número y con la ayuda de un SWITCH pinte en pantalla si el número
+ es positivo, negativo o cero */
+
+func getNumberWithSwitch(_ number:Int){
+    switch number {
+    case _ where number > 0: print("El número \(number) es positivo.")
+    case _ where number < 0: print("El número \(number) es negativo.")
+    default: print("El número \(number) es cero.")
+    }
+}
+
+getNumberWithSwitch(10)
+getNumberWithSwitch(-10)
+getNumberWithSwitch(0)
