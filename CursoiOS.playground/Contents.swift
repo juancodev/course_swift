@@ -302,3 +302,22 @@ func getNumberWithSwitch(_ number:Int){
 getNumberWithSwitch(10)
 getNumberWithSwitch(-10)
 getNumberWithSwitch(0)
+
+// ARRAYS
+let names:[String] = ["Juan", "Carlos", "Vicente", "Maria"]
+print(names[0]) // "Juan"
+
+// Changing values of the array
+var daysOfWeek:[String] = ["Monday", "Tuesday", "wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+print(daysOfWeek[2])
+daysOfWeek[2] = "Wednesday"
+print(daysOfWeek)
+
+
+// Remove a value of the array
+daysOfWeek.remove(at: 2)
+print(daysOfWeek)
+
+// Add a new value to array
+daysOfWeek.append("Wednesday")
+print(daysOfWeek)
