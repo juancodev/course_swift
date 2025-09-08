@@ -321,3 +321,190 @@ print(daysOfWeek)
 // Add a new value to array
 daysOfWeek.append("Wednesday")
 print(daysOfWeek)
+
+// FOR LOOP
+for i in 1...5 {
+    print(i)
+}
+
+for day in daysOfWeek{
+    print("The days of week are: \(day)")
+}
+
+for day in daysOfWeek{
+    if day == "Thursday" {
+        print("It's Thursday!")
+    }
+}
+
+// WHILE LOOP
+
+var count = 0
+while count < 10{
+    print("I'm a count and my value is: \(count)")
+    count += 1
+}
+
+// WHILE REPEAT LOOP - ESTE LOOP NOS PERMITE INTERACTUAR AL MENOS UNA SOLA VEZ, ES DECIR, NOS PERMITE AL MENOS UNA SOLA VEZ SE ITERA.
+var countRepeat = 5
+repeat {
+    print("repeat at least once")
+} while countRepeat < 0
+
+// Loop with continue and break
+for day in daysOfWeek{
+    print("--------------")
+    if day == "Thursday"{
+        print("It's thursday!")
+        continue
+    }
+    print("xxxxxxxxxx")
+}
+
+/** Ejercicio 7
+ Escribe una función que reciba un númera e imprima su tabla de multiplicar del 1 al 10.
+*/
+
+func getNumberForMultiply(number:Int){
+    let numberToMultiplicate:[Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    var resultList:[Int] = []
+    for i in numberToMultiplicate {
+        var result:Int = number * i
+        resultList.append(result)
+    }
+    print("The table of multiply of \(number) is \(resultList)")
+}
+
+getNumberForMultiply(number: 2)
+
+// Extra:
+
+func multiplication(_ number:Int, _ initialNumber:Int = 1, _ finishNumber:Int = 10){
+    for i in initialNumber...finishNumber{
+        print("\(number) multiply for \(i) is \(number * i)")
+    }
+}
+
+multiplication(7, 1, 12)
+
+/** Ejercicio 8
+ Escribe un programa que calcule la suma de todos los números pares del 1 al 100 y muestre el resultado.
+ Para saber si un número es par se tiene que dar la siguiente condificón (número % 2 == 0)
+*/
+
+func excersiveEight(_ initialNumber:Int = 1, _ finishNumber:Int = 100){
+    var listPair:[Int] = []
+    var total:Int = 0
+    for i in initialNumber...finishNumber{
+        if (i % 2 == 0){
+            listPair.append(i)
+        }
+    }
+    for i in listPair{
+        total += i
+    }
+    print("The sum total is \(total)")
+}
+
+excersiveEight(1, 10)
+
+/** Ejercicio 9
+ Escribe una función que cuente el número de vocales en una palabra y lo pinte.
+ TIP: Las palabras (strings) puedes recorrerse con bucle for.
+*/
+
+func excersiveNine(word:String){
+    // El "_" representa una variable que no será utilizada en nuestro proyecto
+    var _:[String] = ["a", "e", "i", "o", "u"]
+    var totalVowels:Int = 0
+    for i in word {
+        switch i.lowercased() {
+        case "a": totalVowels += 1
+        case "e": totalVowels += 1
+        case "i": totalVowels += 1
+        case "o": totalVowels += 1
+        case "u": totalVowels += 1
+        default: totalVowels += 0
+        }
+    }
+    print("The total vowels in this word is \(totalVowels)")
+}
+
+excersiveNine(word: "Hello World")
+
+// Tuplas
+
+var tuple = ("Juan", 26, 26334593, "Venezolano", true, 1.60)
+print(tuple.0)
+
+// Dictionary
+
+var dict:[String: Any] = ["name": "Juan", "age": 26, "dni": 26334593, "nationality": "Venezolano", "passport": true, "height": 1.60]
+var dataDict = dict["name"] as? String ?? "Defaul Value" // Acá forzamos el tipado, es decir, certificamos que el valor va a ser "String" y evitamos el opcional.
+
+print(dataDict)
+
+// For in Dictionary
+for (key, value) in dict{
+    print("The key of the dictionary is \(key) and the value is \(value)")
+}
+
+// Optionality - Nullabilidad
+
+var stringWithText:String = "Hello world!"
+var stringWithOptional:String? = nil
+
+print(stringWithText)
+print(stringWithOptional)
+
+func exampleNil(_ text:String){
+    return
+}
+
+exampleNil(stringWithText)
+exampleNil(stringWithOptional ?? "Text") // Optionals
+//exampleNil(stringWithOptional!) // Afirmar los valores
+
+// Esta forma funciona para certificar los valores
+func exampleNilTwo(_ text:String?){
+    /*if let example = text {
+        print(example)
+    } else {
+        print("Introduce un nombre para continuar")
+    }
+    */
+    
+//    guard let example = text else {
+//        return
+//    }
+}
+
+
+// CLASS
+
+class Person {
+    var name:String
+    var age:Int
+    
+    // init es el contructor
+    init(name:String, age:Int) {
+        self.name = name
+        self.age = age
+    }
+    
+    func greeting() {
+        print("Hello, my name is \(name) and i'm \(age) years old")
+    }
+}
+
+var personOne:Person = Person(name:"Juan", age:26)
+personOne.greeting()
+
+// Struct es una forma de clase pero para ser más específica.
+
+struct ExampleStruct {
+    var name:String
+    var age:Int
+}
+
+var exampleVariableStruct:ExampleStruct = ExampleStruct(name: "Carlos", age: 27)
